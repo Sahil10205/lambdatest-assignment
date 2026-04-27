@@ -1,73 +1,54 @@
-# Amazon Automation Tests – LambdaTest Assignment
+\# Amazon Automation Tests – LambdaTest Assignment
 
-Automated test cases for Amazon using **Playwright + Python** with parallel execution.
 
-## Test Cases
 
-- **Test 1:** Search for iPhone on Amazon → open first result → print price → add to cart
-- **Test 2:** Search for Samsung Galaxy on Amazon → open first result → print price → add to cart
+Automated test cases for Amazon using Playwright + Python with parallel execution.
 
-Both tests run **in parallel** using `pytest-xdist`.
 
----
 
-## Setup Instructions
+\## Test Cases
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/YOUR_USERNAME/lambdatest-assignment.git
-cd lambdatest-assignment
-```
+\- TC1: Search for iPhone on Amazon.in, add to cart, print price
 
-### 2. Install dependencies
-```bash
+\- TC2: Search for Samsung Galaxy on Amazon.in, add to cart, print price
+
+\- Parallel Execution: Both tests run simultaneously using pytest-xdist
+
+
+
+\## Setup
+
+
+
+Install dependencies:
+
 pip install -r requirements.txt
-```
 
-### 3. Install Playwright browsers
-```bash
 playwright install chromium
-```
 
----
 
-## Running the Tests
 
-### Run both tests in parallel (recommended)
-```bash
-pytest tests/ -n 2 -v -s
-```
+\## Run Locally
 
-### Run a single test
-```bash
-pytest tests/test_amazon.py::test_iphone_add_to_cart -v -s
-pytest tests/test_amazon.py::test_galaxy_add_to_cart -v -s
-```
+python -m pytest tests/ -n 2 -v -s
 
-### Run in headed mode (see the browser)
-```bash
-pytest tests/ -n 2 -v -s --headed
-```
 
----
 
-## Expected Output
+\## Run on LambdaTest Cloud
 
-```
-[iPhone] Price: $999.00
-*** iPhone Price: $999.00 ***
-[iPhone] Added to cart successfully!
+Set credentials in tests/test\_amazon.py then run:
 
-[Samsung Galaxy] Price: $849.00
-*** Samsung Galaxy Price: $849.00 ***
-[Samsung Galaxy] Added to cart successfully!
-```
+python -m pytest tests/ -n 2 -v -s
 
----
 
-## Tech Stack
 
-- Python 3.x
-- Playwright (browser automation)
-- pytest (test runner)
-- pytest-xdist (parallel execution)
+\## Tech Stack
+
+\- Python 3.13
+
+\- Playwright
+
+\- pytest + pytest-xdist
+
+\- LambdaTest Cloud Grid
+
